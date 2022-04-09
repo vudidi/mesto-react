@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Main from "./components/Main";
-import PopupWithForm from "./components/PopupWithForm";
-import ImagePopup from "./components/ImagePopup";
+import Header from "./Header";
+import Footer from "./Footer";
+import Main from "./Main";
+import PopupWithForm from "./PopupWithForm";
+import ImagePopup from "./ImagePopup";
 
 function App() {
   const [isEditProfilePopupOpen, setOpenEditProfile] = React.useState(false);
