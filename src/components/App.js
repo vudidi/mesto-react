@@ -10,9 +10,11 @@ function App() {
   const [isAddPlacePopupOpen, setOpenAddPlace] = React.useState(false);
   const [isEditAvatarPopupOpen, setOpenEditAvatar] = React.useState(false);
   const [selectedCard, setSelectedCard] = React.useState({});
+  const [isImageOpen, setImageOpen] = React.useState(false);
 
   function handleCardClick(card) {
     setSelectedCard(card);
+    setImageOpen(true);
   }
 
   function handleEditAvatarClick() {
@@ -31,7 +33,7 @@ function App() {
     setOpenEditAvatar(false);
     setOpenEditProfile(false);
     setOpenAddPlace(false);
-    setSelectedCard({});
+    setImageOpen(false);
   }
 
   return (
@@ -42,7 +44,7 @@ function App() {
         onEditAvatar={handleEditAvatarClick}
         onEditProfile={handleEditProfileClick}
         onAddPlace={handleAddPlaceClick}
-        onCardClick={handleCardClick}      
+        onCardClick={handleCardClick}
       />
 
       <PopupWithForm
@@ -127,15 +129,12 @@ function App() {
         <span className="popup__error avatar-link-error"></span>
       </PopupWithForm>
 
-      <PopupWithForm
-        name="confirm"
-        title="Вы уверены?"
-        buttonText="Да"
-      ></PopupWithForm>
+      <PopupWithForm name="confirm" title="Вы уверены?" buttonText="Да" />
 
       <ImagePopup
-      onClose={closeAllPopups}
-      card={selectedCard}
+        onClose={closeAllPopups}
+        card={selectedCard}
+        isOpen={isImageOpen}
       />
 
       <Footer />
