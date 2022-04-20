@@ -2,7 +2,7 @@ function ImagePopup(props) {
   return (
     <div
       className={`popup popup-photo ${
-        props.card.id && props.isOpen && "popup_opened"
+        props.card._id && props.isOpen && "popup_opened"
       }`}
     >
       <div className="popup-photo__container">

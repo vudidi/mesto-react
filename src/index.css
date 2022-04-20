@@ -20,6 +20,7 @@
 @import url(./styles/blocks/card/__like-icon/_active/card__like-icon_active.css);
 @import url(./styles/blocks/card/__like-count/card__like-count.css);
 @import url(./styles/blocks/card/__delete/card__delete.css);
+@import url(./styles/blocks/card/__delete/_hidden/card__delete_hidden.css);
 @import url(./styles/blocks/card/__title/card__title.css);
 @import url(./styles/blocks/card/__panel/card__panel.css);
 @import url(./styles/blocks/footer/footer.css);
