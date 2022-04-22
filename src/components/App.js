@@ -23,7 +23,6 @@ function App() {
     Promise.all([api.getCards(), api.getProfile()])
       .then(([cardsData, userData]) => {
         setCards(cardsData);
-        console.log(cardsData);
         setCurrentUser(userData);
       })
       .catch((err) => {
@@ -46,15 +45,23 @@ function App() {
   function handleCardLike(card) {
     const isLiked = card.likes.some((i) => i._id === currentUser._id);
 
-    api.changeLikeCardStatus(card._id, isLiked).then((newCard) => {
+    api.changeLikeCardStatus(card._id, isLiked)
+    .then((newCard) => {
       const newLike = cards.map((c) => (c._id === card._id ? newCard : c));
       setCards(newLike);
+    })
+    .catch((err) => {
+      console.log(err);
     });
   }
 
   function handleCardDelete(card) {
-    api.deleteCard(card._id).then((cardItem) => {
+    api.deleteCard(card._id)
+    .then((cardItem) => {
       setCards((arr) => arr.filter((c) => c._id !== card._id && cardItem));
+    })
+    .catch((err) => {
+      console.log(err);
     });
   }
 

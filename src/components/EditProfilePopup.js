@@ -44,6 +44,7 @@ function EditProfilePopup(props) {
             maxLength="40"
             id="profile-title"
             required
+            autoComplete="off"
           />
           <span className="popup__error profile-title-error"></span>
           <input
@@ -56,6 +57,7 @@ function EditProfilePopup(props) {
             maxLength="200"
             id="profile-about"
             required
+            autoComplete="off"
           />
           <span className="popup__error profile-about-error"></span>
         </PopupWithForm>

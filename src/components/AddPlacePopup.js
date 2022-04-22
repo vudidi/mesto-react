@@ -45,6 +45,7 @@ function AddPlacePopup(props) {
         maxLength="30"
         id="card-title"
         required
+        autoComplete="off"
       />
       <span className="popup__error card-title-error"></span>
 
@@ -57,6 +58,7 @@ function AddPlacePopup(props) {
         placeholder="Ссылка на картинку"
         id="card-link"
         required
+        autoComplete="off"
       />
       <span className="popup__error card-link-error"></span>
     </PopupWithForm>
